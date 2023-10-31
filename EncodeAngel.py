@@ -19,7 +19,7 @@ def encode(code):
 
 
 # Defines function to decode user's password
-def decode(password):
+def decoder(password):
     string = ''
     for i in range(len(password)):
         # Shifts each digit down by 3 in password
@@ -29,7 +29,9 @@ def decode(password):
 
 if __name__ == '__main__':
     while True:
+        # adds epmty string for decoded
         stored = ""
+        # adds empty string for encoded
         old = ""
         menu()
         ans = input("Please enter an option: ")
@@ -37,8 +39,12 @@ if __name__ == '__main__':
             convert = input("Please enter your password to encode: ")
             if len(convert) != 8:
                 raise ValueError("ERROR! Not 8 digits!")
-            old += convert
-            stored += encode(convert)
+            # adds values to empty strigs
+            old += str(convert)
+            stored += str(encode(convert))
             print("Your password has been encoded and stored!")
-
-
+        if ans == "2":
+            print("The encoded password is", stored, " and the original password is ", old, )
+        if ans == "3":
+            # quits program if optio 3 is selected.
+            break
