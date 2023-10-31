@@ -18,6 +18,14 @@ def encode(code):
     return new
 
 
+# Defines function to decode user's password
+def decode(password):
+    string = ''
+    for i in range(len(password)):
+        # Shifts each digit down by 3 in password
+        string = string + str(int(password[i]) - 3)
+    return string
+
 
 if __name__ == '__main__':
     while True:
